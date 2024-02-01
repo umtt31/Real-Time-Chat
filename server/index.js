@@ -6,7 +6,8 @@ require("dotenv").config();
 
 // routes
 const userRoute = require("./routes/userRoute");
-const chatRoute = require('./routes/chatRoute')
+const chatRoute = require("./routes/chatRoute");
+const messageRoute = require("./routes/messageRoute");
 
 // defining enviroments
 const port = process.env.POST || 3000;
@@ -32,8 +33,9 @@ app.use(express.json());
 app.use(cors());
 
 // connecting routes
-app.use('/api/users', userRoute)
-app.use('/api/chats', chatRoute)
+app.use("/api/users", userRoute);
+app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome to chat API");
