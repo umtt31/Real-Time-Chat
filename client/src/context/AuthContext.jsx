@@ -77,7 +77,8 @@ export const AuthContextProvider = ({ children }) => {
         return setLoginError(response);
       }
 
-      localStorage.setItem("User", JSON.stringify(response));
+      localStorage.setItem("User", JSON.stringify(response))
+
       setUser(response);
     },
     [loginInfo]

@@ -10,7 +10,7 @@ const chatRoute = require("./routes/chatRoute");
 const messageRoute = require("./routes/messageRoute");
 
 // defining enviroments
-const port = process.env.POST || 3000;
+const port = process.env.POST || 5000;
 const uri = process.env.ATLAS_URI;
 
 const app = express();

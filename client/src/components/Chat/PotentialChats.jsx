@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const potentialChats = () => {
   const { user } = useContext(AuthContext);
-  const { potentialChats, createChat } = useContext(ChatContext);
+  const { potentialChats, createChat, onlineUsers } = useContext(ChatContext);
   return (
     <div className="all-users">
       {potentialChats &&
@@ -18,7 +18,13 @@ const potentialChats = () => {
               }}
             >
               {u.name}
-              <span className="user-online"></span>
+              <span
+                className={
+                  onlineUsers?.some((user) => user?.userId === u?._id)
+                    ? "user-online"
+                    : ""
+                }
+              ></span>
             </div>
           );
         })}
