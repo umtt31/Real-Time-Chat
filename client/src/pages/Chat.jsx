@@ -11,6 +11,17 @@ const Chat = () => {
   const { userChats, isUserChatsLoading, updateCurrentChat } =
     useContext(ChatContext);
 
+  userChats?.sort(function (a, b) {
+    // Convert the date strings to Date objects
+    let dateA = new Date(a.createdAt);
+    let dateB = new Date(b.createdAt);
+
+    // Subtract the dates to get a value that is either negative, positive, or zero
+    return dateB - dateA;
+  });
+
+  console.log(userChats);
+
   return (
     <>
       <Container>
@@ -32,7 +43,7 @@ const Chat = () => {
                 );
               })}
             </Stack>
-            <ChatBox/>
+            <ChatBox />
           </Stack>
         )}
       </Container>
