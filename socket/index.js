@@ -1,6 +1,6 @@
 const { Server } = require("socket.io");
 
-const io = new Server({ cors: "https://real-time-chat-app-uq9r.onrender.com" });
+const io = new Server({ cors: "https://glittery-hummingbird-f540f1.netlify.app/" });
 
 let onlineUsers = [];
 
@@ -38,4 +38,4 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(3000);
+io.listen("https://real-time-chat-socket-ycfj.onrender.com");
