@@ -21,7 +21,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io("https://real-time-chat-socket-ycfj.onrender.com");
     setSocket(newSocket);
 
     return () => {
@@ -236,7 +236,7 @@ export const ChatContextProvider = ({ children, user }) => {
 
         return notification;
       });
-      setNotifications(mNotifications)
+      setNotifications(mNotifications);
     }
   );
 
@@ -259,7 +259,7 @@ export const ChatContextProvider = ({ children, user }) => {
         allUsers,
         markAllNotificationsAsRead,
         markNotificationAsRead,
-        markThisUserNotificationAsRead
+        markThisUserNotificationAsRead,
       }}
     >
       {children}

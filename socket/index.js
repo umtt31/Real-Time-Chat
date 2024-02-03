@@ -1,6 +1,6 @@
 const { Server } = require("socket.io");
 
-const io = new Server({ cors: "https://glittery-hummingbird-f540f1.netlify.app/" });
+const io = new Server({ cors: "https://musical-beignet-722800.netlify.app/" });
 
 let onlineUsers = [];
 
