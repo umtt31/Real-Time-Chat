@@ -20,7 +20,7 @@ exports.registerUser = async (req, res) => {
     if (!validator.isEmail(email))
       return res.status(400).json("Email must be a valid email.");
     if (!validator.isStrongPassword(password))
-      return res.status.json("Password must be a strong password.");
+      return res.status(400).json("Password must be a strong password.");
 
     user = new userModel({ name, email, password });
 
